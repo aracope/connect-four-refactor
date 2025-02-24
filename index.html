@@ -1,30 +1,34 @@
 <!doctype html>
+
 <head>
   <title>Connect 4</title>
   <link href="connect4.css" rel="stylesheet">
 </head>
+
 <body>
-  <div id="color-form">
-    <label for="p1Color">Player 1 Color: </label>
-    <input type="color" id="p1Color" value="#ff0000">
-    <label for="p2Color">Player 2 Color: </label>
-    <input type="color" id="p2Color" value="#0000ff">
-    <button id="startGame">Start Game</button>
-  </div>
+  <div id=game-container>
+    <h1>Connect Four</h1>
+    <div id="color-form">
+      <label for="p1Color">Player 1 Color: </label>
+      <input type="color" id="p1Color" value="#ff0000">
+      <label for="p2Color">Player 2 Color: </label>
+      <input type="color" id="p2Color" value="#0000ff">
+      <button id="startGame">Start Game</button>
+    </div>
 
-<div id="game">
-  <table id="board"></table>
-</div>
+    <div id="game">
+      <table id="board"></table>
+    </div>
 
-<!-- <div id="winner-modal" class="hidden">
+    <!-- <div id="winner-modal" class="hidden">
   <div id="winner-box">
     <p id="winner-text"></p>
     <div id="winner-color"></div>
     <button id="close-modal">Close</button> -->
   </div>
-</div>
 
-<script src="connect4.js"></script>
+  <script src="connect4.js"></script>
 
 </body>
+
 </html>

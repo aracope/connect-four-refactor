@@ -1,3 +1,27 @@
+/* CSS Palette */
+:root {
+  --primary: #a3a3a35d;
+}
+
+body {
+  background-color: var(--primary);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 /* game board table */
 
 #board td {
@@ -26,7 +50,7 @@
 /* column-top is table row of clickable areas for each column */
 
 #column-top td {
-  border: dashed 1px lightgray;
+  border: dashed 1px rgb(255, 61, 61);
 }
 
 #column-top td:hover {
