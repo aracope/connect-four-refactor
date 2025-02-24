@@ -22,43 +22,8 @@ body {
   width: 100%;
 }
 
-/* game board table */
-
-#board td {
-  width: 50px;
-  height: 50px;
-  border: solid 1px #666;
-}
-
-/* pieces are div within game table cells: draw as colored circles */
-
-.piece {
-  margin: 5px;
-  width: 80%;
-  height: 80%;
-  border-radius: 50%;
-}
-
-/* .piece.p1 {
-  background-color: red;
-}
-
-.piece.p2 {
-  background-color: blue;
-} */
-
-/* column-top is table row of clickable areas for each column */
-
-#column-top td {
-  border: dashed 1px rgb(255, 61, 61);
-}
-
-#column-top td:hover {
-  background-color: gold;
-}
-
 /* Modal styles */
-/* #winner-modal {
+#color-modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -68,24 +33,41 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 }
 
-#winner-box {
-  background: white;
+#color-form {
+  background: rgb(218, 216, 216);
   padding: 20px;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#winner-color {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin: 10px auto;
+#color-modal.hidden {
+  display: none;
 }
 
-/* Hide modal by default */
-/* .hidden {
-  display: none;
-}  */
+/* game board table */
+#board td {
+  width: 50px;
+  height: 50px;
+  border: solid 1px #666;
+}
+
+/* pieces are div within game table cells: draw as colored circles */
+.piece {
+  margin: 5px;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+}
+
+/* column-top is table row of clickable areas for each column */
+#column-top td {
+  border: dashed 1px rgb(255, 61, 61);
+}
+
+#column-top td:hover {
+  background-color: gold;
+}

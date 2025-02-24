@@ -26,10 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
       this.isGameOver = false; // New property to track game state
       this.makeBoard();
       this.makeHtmlBoard();
-
-      // Hide the modal on game start
-      const modal = document.getElementById('winner-modal');
-      modal.classList.add('hidden');  // Hide modal on game load
     }
 
     /** makeBoard: create in-JS board structure:
@@ -198,6 +194,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       this.makeBoard(); // Reset board
       this.makeHtmlBoard(); // Render new board
+
+      // Hide the modal when the game starts
+      document.getElementById('color-modal').classList.add('hidden');
     }
   }
 
