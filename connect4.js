@@ -89,13 +89,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /** endGame: announce game end */
-
     endGame(msg) {
       alert(msg);
       if (this.isGameOver) return;
 
       this.isGameOver = true;
+
+      // Show the "Restart Game" button after the game ends
+      document.getElementById('restartGame').classList.remove('hidden');
     }
+
 
     /** handleClick: handle click of column top to play piece */
 
@@ -197,6 +200,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Hide the modal when the game starts
       document.getElementById('color-modal').classList.add('hidden');
+      document.getElementById('restartGame').classList.add('hidden');
+
     }
   }
 
@@ -209,6 +214,30 @@ document.addEventListener("DOMContentLoaded", () => {
       const p2Color = document.getElementById('p2Color').value;
       game = new Game(6, 7, [p1Color, p2Color]);
     }
+  });
+
+  document.getElementById('restartGame').addEventListener('click', () => {
+    // Show the modal again when restarting the game
+    document.getElementById('color-modal').classList.remove('hidden');
+    document.getElementById('board').classList.add('hidden');
+
+    // Optionally reset the board and colors for the new game
+    const p1Color = document.getElementById('p1Color').value;
+    const p2Color = document.getElementById('p2Color').value;
+    game = new Game(6, 7, [p1Color, p2Color]);
+
+  });
+
+  // Event listener for color picker modal
+  document.getElementById('color-modal').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const p1Color = document.getElementById('p1Color').value;
+    const p2Color = document.getElementById('p2Color').value;
+    game = new Game(6, 7, [p1Color, p2Color]);
+
+    // Hide the color modal and show the board
+    document.getElementById('color-modal').classList.add('hidden');
+    document.getElementById('board').classList.remove('hidden');
   });
 
   // Create a new game instance with chosen colors
